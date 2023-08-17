@@ -6,20 +6,15 @@ import { RecipeService } from './recipe.service';
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
-  providers:[RecipeService]
+
 })
 export class RecipesComponent {
 
-  selectedRecipe : Recipe;
+  
 
   constructor(private recipeService:RecipeService) { }
   ngOnInit() { 
-    this.recipeService.recipeSelected
-    .subscribe(   // subscribe means listen to the event emitter
-      (recipe:Recipe) => {
-        this.selectedRecipe = recipe;
-      }
-    );
+    
   }
 
 }
