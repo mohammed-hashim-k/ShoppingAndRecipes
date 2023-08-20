@@ -98,11 +98,30 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "ShoppingAndRecipes:build:production"
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "cf854703-ad82-45cd-b16e-07ac1d933bc5"
+    "analytics": "cf854703-ad82-45cd-b16e-07ac1d933bc5",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

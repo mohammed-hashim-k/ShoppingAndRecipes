@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "recipebook-a24c5"
+  },
+  "targets": {
+    "recipebook-a24c5": {
+      "hosting": {
+        "ShoppingAndRecipes": [
+          "recipebook-a24c5"
+        ]
+      }
+    }
+  }
+}

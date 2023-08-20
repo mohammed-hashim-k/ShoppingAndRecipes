@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { Component ,ElementRef,ViewChild,EventEmitter,Output} from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
+import { Store } from '@ngrx/store';
+import * as ShoppingListActions from '../store/shopping-list.actions';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -18,7 +20,7 @@ export class ShoppingEditComponent {
   editedItemIndex : number;
   editedItem : Ingredient;
 
-  constructor( private slService : ShoppingListService) { }
+  constructor(private slService: ShoppingListService, private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>) { }
 
   ngOnInit() { 
 
@@ -61,7 +63,10 @@ export class ShoppingEditComponent {
     this.slService.deleteIngredient(this.editedItemIndex);
     this.onClear();
   }
-  ngOnDestroy(){
-    this.subscription.unsubscribe();
+  ngOnDestroy() {
+   
+      this.subscription?.unsubscribe();
+    
+    
   }
 }
