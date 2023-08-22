@@ -14,7 +14,7 @@ import { RecipesComponent } from "./recipes.component";
     imports: [RouterModule.forChild([
             {
                 path: '', component: RecipesComponent, canActivate: [AuthGuard], children: [
-                    { path: '', component: RecipeStartComponent,resolve: [RecipesResolverService] },
+                    { path: '', component: RecipeStartComponent },
                     { path: 'new', component: RecipeEditComponent },
                     { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] },
                     { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService] },
