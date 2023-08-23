@@ -1,14 +1,22 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 
 <div class="row">
-    <div class="col-xs-10">
-        <app-shopping-edit ></app-shopping-edit>
-        <hr>
-        <ul class="list-group">
-            <a href="" class="list-group-item" style="cursor:pointer;"
-            *ngFor="let ingredient of (ingredients | async).ingredients; let i = index"
-            (click)="onEditItem(i)">
-                {{ingredient.name}} ({{ingredient.amount}})
-            </a>
-        </ul>
-    </div>
+  <div class="col-xs-10">
+    <app-shopping-edit></app-shopping-edit>
+    <hr />
+    <ul class="list-group">
+      <h4
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="
+          let ingredient of (ingredients | async).ingredients;
+          let i = index
+        "
+        (click)="onEditItem(i)"
+      >
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </h4>
+    </ul>
+  </div>
 </div>
